@@ -18,4 +18,4 @@ This repository contains a basic to-do app implemented in PHP to showcase my PHP
 
 ## Live Demo 🌐
 
-A live demo of the to-do app is available at [Demo Link](https://raphaelduran.com/todo/). ▶️🌐
+A live demo of the to-do app is available at <a href="https://raphaelduran.com/todo/" target="_blank">Demo Link</a>. ▶️🌐
