@@ -10,7 +10,18 @@ $(document).ready(function () {
       },
       (data) => {
         if (data) {
-          $(this).parent().hide(250);
+          $(this).parent().hide(250).remove();
+          if ($(".todo-list").children().length == 0) {
+            // Add HTML code to show-todo-section
+            $(".show-todo-section").html(`
+            <div class="empty">
+                    <h2 style="margin-bottom:0.5em">You have nothing to do</h2>
+                    <h3>Please write a new to-do</h3>
+                    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_27cgfczo.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+
+                </div>
+            `);
+          }
         }
       }
     );

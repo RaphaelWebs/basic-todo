@@ -1,13 +1,13 @@
 <?php
 
-if(isset($_POST['id'])) {
+if (isset($_POST['id'])) {
     // Database connection
-    require '../includes/connection.php'; 
+    require '../includes/connection.php';
 
     $id = $_POST['id'];
-    
- 
-    if(empty($id)) {
+
+
+    if (empty($id)) {
         // Check if the id is empty
         echo 'error';
     } else {
@@ -25,20 +25,16 @@ if(isset($_POST['id'])) {
 
 
         // I'm Topher
-        if($res) {
-           echo $checked;
+        if ($res) {
+            echo $checked;
         } else {
             echo 'error';
         }
 
         $conn = null;
         exit();
-
-
-    } 
-    
-   
+    }
 } else {
     // Catch error
-    header("Location: ../?status=error"); 
+    header("Location: ../?status=error");
 }

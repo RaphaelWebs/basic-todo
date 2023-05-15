@@ -76,7 +76,7 @@ h3 {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   overflow: hidden;
-  -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px) brightness(1.2) saturate(1.5);
   backdrop-filter: blur(15px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
@@ -115,7 +115,13 @@ h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   transition: 0.25s;
-  backdrop-filter: brightness(2) saturate(2);
+  backdrop-filter: brightness(1.2) saturate(1.5);
+}
+
+.type-bar:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: brightness(0.5);
+  backdrop-filter: brightness(0.5);
 }
 
 .type-bar::placeholder {
@@ -130,7 +136,9 @@ h3 {
 }
 
 .error-bar:focus {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: brightness(0.5);
+  backdrop-filter: brightness(0.5);
 }
 .error-bar::placeholder {
   font-weight: 700;
@@ -290,6 +298,11 @@ input[type="checkbox"] {
   transition: 0.25s;
   margin: 0.2rem;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:hover:after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 96 960 960' fill='000'%3E%3Cpath d='M378 810 154 586l43-43 181 181 384-384 43 43-427 427Z'/%3E%3C/svg%3E");
 }
 
 label:hover input[type="checkbox"] {
@@ -307,9 +320,6 @@ input[type="checkbox"]:after {
   transform: scale(0);
   transition: 120ms transform ease-in-out;
 }
-input[type="checkbox"]:checked:after {
-  transform: scale(1);
-}
 
 input[type="checkbox"] {
   border-radius: 50%;
@@ -324,4 +334,5 @@ input[type="checkbox"]:checked {
 }
 input[type="checkbox"]:checked:after {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 96 960 960' fill='000'%3E%3Cpath d='M378 810 154 586l43-43 181 181 384-384 43 43-427 427Z'/%3E%3C/svg%3E");
+  transform: scale(1.2);
 }
